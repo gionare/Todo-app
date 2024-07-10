@@ -9,12 +9,18 @@ function App() {
 
   return (
     <main className="bg-hero-pattern bg-no-repeat">
-      <AddTodo
-        inputValue={inputValue}
-        setInputValue={setInputValue}
-        setTodos={setTodos}
-      />
-      <TodoList todos={todos} setTodos={setTodos} />
+      <div className="w-[540px] mx-auto border-2">
+        <div className="flex justify-between items-center">
+          <h1 className="text-white text-[40px] font-bold ">TODO</h1>
+          <img src="/icon-sun.svg" alt="" />
+        </div>
+        <AddTodo
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          setTodos={setTodos}
+        />
+        <TodoList todos={todos} setTodos={setTodos} />
+      </div>
     </main>
   );
 }

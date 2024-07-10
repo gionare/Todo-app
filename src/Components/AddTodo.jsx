@@ -13,14 +13,21 @@ export default function AddTodo({ inputValue, setInputValue, setTodos }) {
     setInputValue("");
   };
   return (
-    <div>
+    <div className=" mt-[50px] relative rounded-[30px] overflow-hidden">
       <input
+        className="py-4 pl-10 bg-grey outline-none text-[#4d5067] text-[18px]"
         type="text"
         value={inputValue}
-        placeholder="Enter todo..."
+        placeholder="Create a new Todo..."
         onChange={(event) => setInputValue(event.target.value)}
+        // className="w-full"
       />
-      <button onClick={handleAdd}>Add</button>
+      <button
+        onClick={handleAdd}
+        className="absolute hover:opacity-60 hover:bg-green-300 text-green-700 font-bold py-2 px-4 rounded"
+      >
+        Add
+      </button>
     </div>
   );
 }
