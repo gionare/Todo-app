@@ -40,9 +40,9 @@ export default function TodoList({ todos, setTodos }) {
   };
 
   return (
-    <ul className="w-full bg-grey mt-[30px] rounded-[20px]">
+    <ul className="w-full bg-grey mt-[30px] rounded-[20px] text-start pl-4 py-2 drop-shadow-xl">
       {todos.map((item) => (
-        <li key={item.id} className="py-3">
+        <li key={item.id} className="py-4 border-b border-gray-700">
           <input
             type="checkbox"
             onChange={(event) => handleCheck(item.id, event)}

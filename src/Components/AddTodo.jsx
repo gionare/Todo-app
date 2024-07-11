@@ -13,9 +13,9 @@ export default function AddTodo({ inputValue, setInputValue, setTodos }) {
     setInputValue("");
   };
   return (
-    <div className=" mt-[50px] relative rounded-[30px] overflow-hidden">
+    <div className=" mt-[50px] relative rounded-[20px] overflow-hidden drop-shadow-xl">
       <input
-        className="py-4 pl-10 bg-grey outline-none text-[#4d5067] text-[18px]"
+        className="py-4 pl-10 bg-grey outline-none text-[#4d5067] text-[18px] w-full "
         type="text"
         value={inputValue}
         placeholder="Create a new Todo..."
@@ -24,7 +24,7 @@ export default function AddTodo({ inputValue, setInputValue, setTodos }) {
       />
       <button
         onClick={handleAdd}
-        className="absolute hover:opacity-60 hover:bg-green-300 text-green-700 font-bold py-2 px-4 rounded"
+        className="absolute top-2 right-5 hover:opacity-60 hover:bg-green-300 text-green-700 font-bold py-2 px-4 rounded"
       >
         Add
       </button>
