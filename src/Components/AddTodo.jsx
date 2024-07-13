@@ -13,7 +13,7 @@ export default function AddTodo({ inputValue, setInputValue, setTodos }) {
     setInputValue("");
   };
   return (
-    <div className=" mt-[50px] relative rounded-[20px] overflow-hidden drop-shadow-xl">
+    <div className=" mt-[50px] relative rounded-[10px] overflow-hidden drop-shadow-xl">
       <input
         className="py-4 pl-10 bg-grey outline-none text-[#4d5067] text-[18px] w-full "
         type="text"
