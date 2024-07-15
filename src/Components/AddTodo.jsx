@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function AddTodo({ inputValue, setInputValue, setTodos }) {
+export default function AddTodo({
+  inputValue,
+  setInputValue,
+  setTodos,
+  darkMode,
+}) {
   const handleAdd = () => {
     setTodos((prevTodos) => [
       ...prevTodos,
@@ -15,7 +20,9 @@ export default function AddTodo({ inputValue, setInputValue, setTodos }) {
   return (
     <div className=" mt-[50px] relative rounded-[10px] overflow-hidden drop-shadow-xl">
       <input
-        className="py-4 pl-10 bg-grey outline-none text-[#4d5067] text-[18px] w-full "
+        className={`${
+          darkMode ? "bg-grey" : "bg-white"
+        } py-4 pl-10 bg-grey outline-none text-[#4d5067] text-[18px] w-full `}
         type="text"
         value={inputValue}
         placeholder="Create a new Todo..."
