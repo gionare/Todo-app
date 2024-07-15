@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function TodoList({ todos, setTodos }) {
+export default function TodoList({ todos, setTodos, darkMode }) {
   const [editId, setEditId] = useState();
   const [editText, setEditText] = useState("");
 
@@ -40,7 +40,11 @@ export default function TodoList({ todos, setTodos }) {
   };
 
   return (
-    <ul className="w-full bg-grey mt-[30px] rounded-[10px] text-start pl-4 py-2 drop-shadow-xl">
+    <ul
+      className={`${
+        darkMode ? "bg-grey text-[#4d5067]" : "bg-whitelist"
+      } w-full text-[#4d5067] mt-[30px] rounded-[10px] text-start pl-4 py-2 drop-shadow-xl`}
+    >
       {todos.map((item) => (
         <li key={item.id} className="py-4 border-b border-gray-700">
           <input
