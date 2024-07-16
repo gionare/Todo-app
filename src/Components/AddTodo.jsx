@@ -31,7 +31,7 @@ export default function AddTodo({
       />
       <button
         onClick={handleAdd}
-        className="absolute top-2 right-5 hover:opacity-60 hover:bg-green-300 text-green-700 font-bold py-2 px-4 rounded"
+        className=" absolute top-2 right-5 hover:opacity-60 hover:bg-green-300 text-green-700 font-bold py-2 px-4 rounded"
       >
         Add
       </button>

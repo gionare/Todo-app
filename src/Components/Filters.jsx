@@ -1,18 +1,6 @@
 import React, { useState } from "react";
 
-export default function Filters({ darkMode, isActive }) {
-  const array = [
-    { id: 1, label: "items left" },
-    { id: 2, label: "All" },
-    { id: 3, label: "Active" },
-    { id: 4, label: "Completed" },
-    { id: 5, label: "Clear Completed" },
-  ];
-
-  const handleActive = (id) => {
-    setIsActive(id);
-    console.log(isActive);
-  };
+export default function Filters({ darkMode, setFilter, filter, setTodos }) {
   return (
     <div
       className={`${
@@ -20,18 +8,56 @@ export default function Filters({ darkMode, isActive }) {
       } flex row-auto justify-between  rounded-[10px] px-3 py-2 drop-shadow-xl text-[#4d5067]`}
     >
       <div className="flex row-auto  justify-around  w-full">
-        {array.map((item) => (
-          <span
-            key={item.id}
-            onClick={() => handleActive(item.id)}
-            className={`cursor-pointer ${
-              darkMode ? "hover:text-white" : "hover:text-brightblue"
-            }  ${isActive === item.id ? "text-white" : ""}`}
-          >
-            {" "}
-            {item.label}
-          </span>
-        ))}
+        <span
+          onClick={() => setFilter("all")}
+          className={`cursor-pointer  ${
+            darkMode ? "hover:text-white" : "hover:text-brightblue"
+          }  ${
+            filter === "all" ? (darkMode ? "text-white" : "text-sky-600") : ""
+          }`}
+        >
+          {" "}
+          All
+        </span>
+        <span
+          onClick={() => setFilter("active")}
+          className={`cursor-pointer  ${
+            darkMode ? "hover:text-white" : "hover:text-brightblue"
+          }  ${
+            filter === "active"
+              ? darkMode
+                ? "text-white"
+                : "text-sky-600"
+              : ""
+          }`}
+        >
+          Active
+        </span>
+        <span
+          onClick={() => setFilter("completed")}
+          className={`cursor-pointer  ${
+            darkMode ? "hover:text-white" : "hover:text-brightblue"
+          }  ${
+            filter === "completed"
+              ? darkMode
+                ? "text-white"
+                : "text-sky-600"
+              : ""
+          }`}
+        >
+          Completed
+        </span>
+        <span
+          className={`cursor-pointer  ${
+            darkMode ? "hover:text-white" : "hover:text-brightblue"
+          }  `}
+          onClick={() =>
+            setTodos((prevTodos) => prevTodos.filter((item) => !item.isDone))
+          }
+        >
+          {" "}
+          Clear Completed
+        </span>
       </div>
     </div>
   );
